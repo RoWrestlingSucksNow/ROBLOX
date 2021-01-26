@@ -3,6 +3,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RoWre
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RoWrestlingSucksNow/ROBLOX/main/GymOfTragedy/API.lua"))()
 repeat wait() until GOTAPI
 
+GOTAPI.BypassAntiCheat()
+
 -- // Player Tab
 local Player = Library:CreateTab("Player", "Player Functions", true)
 
