@@ -28,6 +28,10 @@ Misc:CreateButton("Play all Sounds", function()
 GOTAPI.SoundFilter()
 end)
 
+Pyros:CreateButton("Left Stage Pyros", function()
+GOTAPI.Pyro("LeftStage")
+end)
+
 Pyros:CreateButton("Right Stage Pyros", function()
 GOTAPI.Pyro("RightStage")
 end)
