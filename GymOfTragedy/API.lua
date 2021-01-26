@@ -1,4 +1,7 @@
 if (getgenv().GOTAPI) then return getgenv().GOTAPI end
+getgenv().GOTAPI = {
+    RemoteKey = ""
+}
 loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/Scripts/master/Notification%20Creation%20Function%20Create"))()
 
 GOTAPI.BypassAntiCheat = function()
