@@ -4,7 +4,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/RoWrestlingSucksNow/R
 repeat wait() until GOTAPI
 
 -- // Anti-Cheat Bypass
-GOTAPI.BypassKick()
 GOTAPI.BypassAntiCheat()
 
 -- // Player Tab
