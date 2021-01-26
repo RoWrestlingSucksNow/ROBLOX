@@ -1,6 +1,5 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/Scripts/master/Notification%20Creation%20Function%20Create"))()
 if (getgenv().GOTAPI) then return getgenv().GOTAPI end
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/Scripts/master/Notification%20Creation%20Function%20Create"))()
 
 GOTAPI.BypassAntiCheat = function()
 for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
