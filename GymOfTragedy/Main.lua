@@ -14,6 +14,10 @@ local Pyros = Library:CreateTab("Pyros", "Pyro Functions", true)
 
 -- // Functioning
 
+Player:CreateButton("Bypass Anti-Cheat", function()
+GOTAPI.FindAntiCheat()
+end)
+
 Player:CreateButton("Big Clean", function()
 GOTAPI.BigClean()
 end)
