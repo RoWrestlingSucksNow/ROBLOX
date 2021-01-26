@@ -1,8 +1,8 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/Scripts/master/Notification%20Creation%20Function%20Create"))()
 if (getgenv().GOTAPI) then return getgenv().GOTAPI end
 
-GOTAPI.BypassAntiCheat = function()
- local mt = getrawmetatable(game)
+GOTAPI.BypassKick = function()
+local mt = getrawmetatable(game)
 local old = mt.__namecall
 local protect = newcclosure or protect_function
 
@@ -20,6 +20,9 @@ end
 return old(self, ...)
 end)
 hookfunction(game:GetService("Players").LocalPlayer.Kick,protect(function() wait(9e9) end))
+end
+
+GOTAPI.BypassAntiCheat = function()
 for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
 if v.Name == "EDEvents" or v.Name == "BigCleanEvents" then
 v:Destroy()
