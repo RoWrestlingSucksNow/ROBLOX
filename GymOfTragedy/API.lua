@@ -4,16 +4,6 @@ getgenv().GOTAPI = {
     RemoteKey = ""
 }
 
-GOTAPI.BypassAntiCheat = function()
-for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
-if v.Name == "EDEvents" or v.Name == "BigCleanEvents" then
-v:Destroy()
-notif("Bypass Message", "Found Anti-Cheat ("..v.Name..") and Deleted!", 3)
-wait(1)
-end
-end
-end
-
 GOTAPI.BigClean = function()
 if game.ReplicatedStorage:FindFirstChild("EDEvents") or game.ReplicatedStorage:FindFirstChild("BigCleanEvents") then
 notif("Bypass Message", "Please Click on 'Bypass Anti-Cheat' to Proceed to this.", 3)
