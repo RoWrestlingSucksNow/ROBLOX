@@ -6,12 +6,19 @@ repeat wait() until GOTAPI
 -- // Anti-Cheat Bypass
 GOTAPI.BypassAntiCheat()
 
+-- // Player Tab
+local Player = Library:CreateTab("Player", "Player Functions", true)
+
 -- // Misc Tab
 local Misc = Library:CreateTab("Misc", "Misc Functions", true)
 
 -- // Pyros Tab
 local Pyros = Library:CreateTab("Pyros", "Pyro Functions", true)
 
+-- // Functioning
+Player:CreateButton("Big Clean", function()
+GOTAPI.BigClean()
+end)
 
 Misc:CreateButton("Remove Gym", function()
 GOTAPI.RemoveGym()
