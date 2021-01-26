@@ -1,6 +1,17 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/Scripts/master/Notification%20Creation%20Function%20Create"))()
 if (getgenv().GOTAPI) then return getgenv().GOTAPI end
 
+
+GOTAPI.BypassAntiCheat = function()
+for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
+if v.Name == "EDEvents" or v.Name == "BigCleanEvents" then
+v:Destroy()
+notif("Bypass Message", "Found Anti-Cheat ("..v.Name..") and Deleted!", 3)
+wait(1)
+end
+end
+end
+
 GOTAPI.BigClean = function()
 if game.ReplicatedStorage:FindFirstChild("EDEvents") or game.ReplicatedStorage:FindFirstChild("BigCleanEvents") then
 notif("Bypass Message", "Please Click on 'Bypass Anti-Cheat' to Proceed to this.", 3)
@@ -435,3 +446,24 @@ end
 end
 end
 end
+
+settingsFolder:GuiSettings()
+
+local mt = getrawmetatable(game)
+local old = mt.__namecall
+local protect = newcclosure or protect_function
+
+if not protect then
+protect = function(f) return f end
+end
+
+setreadonly(mt, false)
+mt.__namecall = protect(function(self, ...)
+local method = getnamecallmethod()
+if method == "Kick" then
+wait(9e9)
+return
+end
+return old(self, ...)
+end)
+hookfunction(game:GetService("Players").LocalPlayer.Kick,protect(function() wait(9e9) end))
