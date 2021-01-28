@@ -22,6 +22,10 @@ Player:CreateButton("Big Clean", function()
 GOTAPI.BigClean()
 end)
 
+Misc:CreateTextBox("Announce Message", function(message)
+GOTAPI.Announce(message)
+end)
+
 Misc:CreateButton("Remove Gym", function()
 GOTAPI.RemoveGym()
 end)
