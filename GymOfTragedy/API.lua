@@ -457,8 +457,6 @@ end
 end
 end
 
-settingsFolder:GuiSettings()
-
 local mt = getrawmetatable(game)
 local old = mt.__namecall
 local protect = newcclosure or protect_function
