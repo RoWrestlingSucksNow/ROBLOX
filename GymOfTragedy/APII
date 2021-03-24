@@ -53,7 +53,6 @@ local colors = {
 }
 
 function module.notify(target,title,text,color,dur)
-	target = game.Players.LocalPlayer
 	if target:WaitForChild("PlayerGui"):FindFirstChild("simpleSuite") ~= nil then
 	
 	local duration
