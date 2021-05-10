@@ -52,7 +52,7 @@ local colors = {
 	default = Color3.fromRGB(255, 255, 255)	
 }
 
-function module.notify(title,text,color,dur)
+function notify(title,text,color,dur)
 	
 	if game.CoreGui:FindFirstChild("simpleSuite") ~= nil then
 	
