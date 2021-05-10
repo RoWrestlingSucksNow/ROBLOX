@@ -1,27 +1,6 @@
 local module = {}
 
-function insertContainer(p)
-	if p == nil then
-	local simpleSuite = Instance.new("ScreenGui")
-	simpleSuite.Name = "simpleSuite"
-	simpleSuite.DisplayOrder = 25
-	simpleSuite.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	simpleSuite.Parent = game:GetService("CoreGui")
-
-	local Notifications = Instance.new("Frame")
-	Notifications.BackgroundTransparency = 1
-	Notifications.Name = "Notifications"
-	Notifications.Position = UDim2.new(0.815, 0, 0.08, 0)
-	Notifications.Size = UDim2.new(0.175, 0, 0.9, 0)
-	Notifications.Parent = simpleSuite
-
-	local UIListLayout = Instance.new("UIListLayout")
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.Padding = UDim.new(0.025, 0)
-	UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
-	UIListLayout.Parent = Notifications
-	else
-		local simpleSuite = Instance.new("ScreenGui")
+                local simpleSuite = Instance.new("ScreenGui")
 		simpleSuite.Name = "simpleSuite"
 		simpleSuite.DisplayOrder = 25
 		simpleSuite.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -41,8 +20,6 @@ function insertContainer(p)
 		UIListLayout.Parent = Notifications
 	end
 end
-
-insertContainer()
 
 local colors = {
 	alert = Color3.fromRGB(255, 105, 105),
@@ -167,7 +144,6 @@ function notify(title,text,color,dur)
 			end
 		end
 	else
-		insertContainer(game.CoreGui)
 		wait(0.05)
 		module.notify(title,text,color,dur)
 	end
