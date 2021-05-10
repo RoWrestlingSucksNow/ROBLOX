@@ -6,7 +6,7 @@ function insertContainer(p)
 	simpleSuite.Name = "simpleSuite"
 	simpleSuite.DisplayOrder = 25
 	simpleSuite.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	simpleSuite.Parent = game:GetService("StarterGui")
+	simpleSuite.Parent = game:GetService("CoreGui")
 
 	local Notifications = Instance.new("Frame")
 	Notifications.BackgroundTransparency = 1
