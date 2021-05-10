@@ -167,7 +167,7 @@ function module.notify(title,text,color,dur)
 			end
 		end
 	else
-		insertContainer(CoreGui)
+		insertContainer(game.CoreGui)
 		wait(0.05)
 		module.notify(title,text,color,dur)
 	end
