@@ -1,14 +1,17 @@
 if (getgenv().GOTAPI) then return getgenv().GOTAPI end
-getgenv().GOTAPI = {
-    RemoteKey = ""
-}
-loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/Scripts/master/Notification%20Creation%20Function%20Create"))()
+getgenv().GOTAPI = {}
+local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
 
 GOTAPI.FindAntiCheat = function()
 for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
 if v.Name == "EDEvents" or v.Name == "BigCleanEvents" then
 v:Destroy()
-notif("Bypass Message", "Found Anti-Cheat ("..v.Name..") and Deleted!", 3)
+Notification.Notify("Bypass Message", "Found Anti-Cheat ("..v.Name..") and Deleted!", "rbxasset://textures/ui/GuiImagePlaceholder.png", {
+Duration = 3,       
+Main = {
+    Rounding = true,
+}
+});
 wait(1)
 end
 end
@@ -18,21 +21,36 @@ GOTAPI.Announce = function(Text)
 if game:GetService("Workspace").AnnounceName then
 game:GetService("Workspace").AnnounceName.RemoteEvent:FireServer(Text)
 else
-notif("Announce Message", "Couldn't send this due to there being no Announce Remote.", 3)
+Notification.Notify("Announce Message", "Couldn't send this due to there being no Announce Remote.", "rbxasset://textures/ui/GuiImagePlaceholder.png", {
+Duration = 3,       
+Main = {
+    Rounding = true,
+}
+});
 end
 end
         
 GOTAPI.BigClean = function()
 if game.ReplicatedStorage:FindFirstChild("EDEvents") or game.ReplicatedStorage:FindFirstChild("BigCleanEvents") then
-notif("Bypass Message", "Please Click on 'Bypass Anti-Cheat' to Proceed to this.", 3)
+Notification.Notify("Bypass Message", "Please Click on 'Bypass Anti-Cheat' to Proceed to this.", "rbxasset://textures/ui/GuiImagePlaceholder.png", {
+Duration = 3,       
+Main = {
+    Rounding = true,
+}
+});
 else
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Clean") then
 for i,v in pairs(getconnections(Game.Players.LocalPlayer.Backpack.Clean.Handle.Changed)) do
 v:Disable()
 wait()
 end
+Notification.Notify("Clean Message", "You can now equip Clean!", "rbxasset://textures/ui/GuiImagePlaceholder.png", {
+Duration = 3,       
+Main = {
+    Rounding = true,
+}
+});
 game.Players.LocalPlayer.Backpack:FindFirstChild("Clean").Handle.Size = Vector3.new(2,2,2)
-notif("Clean Message", "You can now equip Clean!", 3)
 end
 end
 end
