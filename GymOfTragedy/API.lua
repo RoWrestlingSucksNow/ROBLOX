@@ -18,8 +18,8 @@ end
 end
 
 GOTAPI.Announce = function(Text)
-if game:GetService("Workspace").AnnounceName then
-game:GetService("Workspace").AnnounceName.RemoteEvent:FireServer(Text)
+if game.Workspace:FindFirstChild("AnnounceName") then
+game.Workspace.AnnounceName.RemoteEvent:FireServer(Text)
 else
 Notification.Notify("Announce Message", "Couldn't send this due to there being no Announce Remote.", "rbxasset://textures/ui/GuiImagePlaceholder.png", {
 Duration = 3,       
